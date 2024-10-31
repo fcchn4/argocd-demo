@@ -1,7 +1,17 @@
-project: default
-source:
-  repoURL: https://github.com/fcchn4/argocd-demo.git
-  path: argocd-manifest
-destination:
-  server: https://kubernetes.default.svc
-  namespace: default
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-i4
+  namespace: argocd
+spec:
+  project: default
+  source:
+    path: argocd-manifest
+    repoURL: https://github.com/fcchn4/argocd-demo.git
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
