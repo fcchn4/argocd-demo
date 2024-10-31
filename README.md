@@ -81,6 +81,45 @@ Para la configuración para el login seria.
 argocd login <ARGOCD_SERVER> # Para el ejemplo: argocd login localhost:8080
 ```
 
+## Creación de Aplicaciones, ejemplos
+
+Creación de una aplicación mediante CLI de ArgoCD.
+
+Se establece el espacio de nombres en ArgoCD.
+
+```bash
+kubectl config set-context --current --namespace=argocd
+```
+
+Creamos la aplicación de Guestbook (libro de visitas) desde un repositorio Git.
+
+```bash
+argocd app create guestbook \
+--repo https://github.com/argoproj/argocd-example-apps.git \
+--path guestbook --dest-server https://kubernetes.default.svc \
+--dest-namespace default
+```
+
+Cuespo de un manifiesto para ArgoCd.
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ''
+spec:
+  destination:
+    name: ''
+    namespace: ''
+    server: ''
+  source:
+    path: ''
+    repoURL: ''
+    targetRevision: HEAD
+  sources: []
+  project: ''
+```
+
 ## Referencias
 
 - [Guía de Inicialización](https://argo-cd.readthedocs.io/en/stable/getting_started/).
