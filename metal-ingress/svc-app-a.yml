@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: app-a-service
-  namespace: default
+  namespace: dev
   annotations:
     metallb.universe.tf/address-pool: i4poc
 spec:
