@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-a-service
+  namespace: default
+  annotations:
+    metallb.universe.tf/address-pool: i4poc
+spec:
+  type: LoadBalancer
+  selector:
+    app: app-a
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
