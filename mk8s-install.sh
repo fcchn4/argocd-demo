@@ -20,6 +20,8 @@ echo "[x] ArgoCD Install"
 wget https://github.com/argoproj/argo-cd/releases/download/v2.13.0-rc5/argocd-linux-amd64
 mv argocd-linux-amd64 argocd
 mv argocd /usr/local/bin/
+chmod +x /usr/local/bin/argocd
+chown $1:$1 /usr/local/bin/argocd
 
 ## Post Install
 echo "Execute command: sudo su - $1"
