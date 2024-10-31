@@ -23,6 +23,10 @@ mv argocd /usr/local/bin/
 chmod +x /usr/local/bin/argocd
 chown $1:$1 /usr/local/bin/argocd
 
+## Config for completion
+echo "source <(kubectl completion bash)" >> /home/$1/.bashrc
+echo "source <(argocd completion bash)" >> /home/$1/.bashrc
+
 ## Post Install
 echo "Execute command: sudo su - $1"
 echo "Execute command: microk8s kubectl config view --raw > ~/.kube/config"
