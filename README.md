@@ -81,6 +81,12 @@ Para la configuración para el login seria.
 argocd login <ARGOCD_SERVER> # Para el ejemplo: argocd login localhost:8080
 ```
 
+En un navegador web probar la web de ArgoCD.
+
+```bash
+http://localhost:8080
+```
+
 ## Creación de Aplicaciones, ejemplos
 
 Creación de una aplicación mediante CLI de ArgoCD.
