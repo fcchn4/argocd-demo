@@ -13,7 +13,7 @@ snap install microk8s --classic --channel=1.31
 usermod -a -G microk8s $1
 mkdir -p /home/$1/.kube
 chmod 0700 /home/$1/.kube
-chown -R $1:$1 .kube/
+chown $1:$1 /home/$1/.kube/
 
 ## Install ArgoCD
 echo "[x] ArgoCD Install"
@@ -26,3 +26,4 @@ chown $1:$1 /usr/local/bin/argocd
 ## Post Install
 echo "Execute command: sudo su - $1"
 echo "Execute command: microk8s kubectl config view --raw > ~/.kube/config"
+echo "Execute command: chown $1:$1 /home/$1/.kube/config"
