@@ -2,7 +2,7 @@
 
 ## Delete default files
 echo "[x] Delete User Default Files"
-rm -r Documents Music Pictures Public Templates tmp Videos
+rm -r /home/$1/Documents /home/$1/Music /home/$1/Pictures /home/$1/Public /home/$1/Templates /home/$1/tmp /home/$1/Videos
 
 ## Install Packages
 echo "[x] Snapd Install"
