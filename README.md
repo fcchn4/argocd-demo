@@ -5,7 +5,9 @@
 Para instalar los paquetes necesarios antes de iniciar las pruebas.
 
 ```bash
-git clone https://github.com/fcchn4/argocd-demo.git <USER_NAME>
+git clone https://github.com/fcchn4/argocd-demo.git
+cd argocd-demo
+sudo init-scripts/mk8s-install.sh <USER_NAME>
 ```
 
 Es importante mencionar que estamos utilizando MicroK8s para simular un cluster K8s.
